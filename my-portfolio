@@ -1,0 +1,1047 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Infant Joseph | Software Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --background: #090a0c;
+            --surface: #101216;
+            --text: #f3f4f6;
+            --secondary: #9ca3af;
+            --border: #24272d;
+            --accent: #8b9cff;
+            --accent-light: #171b2b;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* ================= NAVIGATION ================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(9, 10, 12, 0.88);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1100px;
+            margin: auto;
+            height: 70px;
+            padding: 0 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 110px 25px;
+        }
+
+        .section-label {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            letter-spacing: -1px;
+            margin-bottom: 40px;
+        }
+
+        /* ================= HERO ================= */
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 130px;
+        }
+
+        .hero {
+            max-width: 780px;
+        }
+
+        .availability {
+            display: inline-block;
+            color: #7ee2a8;
+            background: #102018;
+            border: 1px solid #244a35;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 80px);
+            line-height: 1;
+            letter-spacing: -4px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 21px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            color: var(--secondary);
+            font-size: 16px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .primary:hover {
+            background: #aab5ff;
+        }
+
+        .secondary {
+            color: var(--text);
+            border: 1px solid var(--border);
+            background: #101216;
+        }
+
+        .secondary:hover {
+            border-color: #4b5563;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .about-text {
+            color: var(--secondary);
+            font-size: 16px;
+        }
+
+        .info-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .info-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            display: block;
+            color: var(--secondary);
+            font-size: 12px;
+            margin-bottom: 3px;
+        }
+
+        .info-value {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .skill {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 22px;
+            transition: 0.2s;
+        }
+
+        .skill:hover {
+            border-color: #5965a8;
+            transform: translateY(-2px);
+        }
+
+        .skill h3 {
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .skill p {
+            color: var(--secondary);
+            font-size: 12px;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 28px;
+            transition: 0.2s;
+        }
+
+        .project:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.22);
+        }
+
+        .project-number {
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .project h3 {
+            margin: 15px 0 10px;
+            font-size: 19px;
+        }
+
+        .project p {
+            color: var(--secondary);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 20px;
+        }
+
+        .technologies span {
+            background: var(--accent-light);
+            color: #aab5ff;
+            padding: 5px 9px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-box {
+            max-width: 700px;
+        }
+
+        .contact-box p {
+            color: var(--secondary);
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 25px;
+            text-align: center;
+            color: var(--secondary);
+            font-size: 12px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+                letter-spacing: -2px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .skills {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .navbar {
+                padding: 0 18px;
+            }
+
+            .logo {
+                font-size: 15px;
+            }
+
+            nav {
+                gap: 8px;
+            }
+
+            nav a {
+                font-size: 10px;
+            }
+
+            section {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* ================= DARK MINIMAL FINISH ================= */
+        ::selection {
+            background: var(--accent);
+            color: #08090b;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at 85% 10%, rgba(139,156,255,0.07), transparent 28%),
+                var(--background);
+        }
+
+        .hero h1 {
+            font-weight: 700;
+        }
+
+        .skill, .project, .info-card {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .button.primary {
+            color: #08090b;
+        }
+
+        .button.primary:hover {
+            color: #08090b;
+        }
+
+
+        /* ================= INTERACTIVE ELEMENTS ================= */
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text);
+            border-radius: 6px;
+            padding: 7px 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        nav a.active {
+            color: var(--accent);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .typing-cursor {
+            border-right: 2px solid var(--accent);
+            padding-right: 3px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            background: var(--surface);
+            color: var(--text);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: 0.25s;
+            z-index: 900;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        @media (max-width: 800px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                padding: 18px 25px;
+                background: rgba(9, 10, 12, 0.97);
+                border-bottom: 1px solid var(--border);
+                display: none;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav.open {
+                display: flex;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<header>
+    <div class="navbar">
+
+        <div class="logo">
+            Infant Joseph
+        </div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Open navigation">
+            ☰
+        </button>
+
+        <nav id="navMenu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section id="home">
+    <div class="reveal-marker"></div>
+
+    <div class="hero">
+
+        <div class="availability">
+            ● Currently learning DevOps
+        </div>
+
+        <h1>
+            Infant <span>Joseph.</span>
+        </h1>
+
+        <div class="hero-subtitle">
+            DevOps Student · Cloud · Linux · Automation
+        </div>
+
+        <p class="hero-description">
+            Computer Science graduate and DevOps student focused on Linux, AWS,
+            cloud infrastructure, automation and backend technologies.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="button primary">
+                View Projects
+            </a>
+
+            <a href="#contact" class="button secondary">
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+    <div class="reveal-marker"></div>
+
+    <div class="section-label">
+        ABOUT
+    </div>
+
+    <h2 class="section-title">
+        A little about me.
+    </h2>
+
+    <div class="about-grid">
+
+        <div>
+
+            <p class="about-text">
+                I am a Computer Science graduate currently pursuing hands-on learning in
+                DevOps, cloud computing, Linux administration and backend development.
+                <br><br>
+                I enjoy understanding how systems work, automating repetitive tasks and
+                turning technical concepts into practical infrastructure. I am
+                currently strengthening my skills in Linux, AWS, Git, Docker,
+                Python and cloud deployment.
+                <br><br>
+                My approach is simple: learn continuously, build useful
+                things and improve through real-world projects.
+            </p>
+
+        </div>
+
+        <div class="info-card">
+
+            <div class="info-item">
+                <span class="info-label">FOCUS</span>
+                <span class="info-value">
+                    DevOps & Cloud
+                </span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">INTERESTS</span>
+                <span class="info-value">
+                    AWS · Linux · Automation
+                </span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">ENVIRONMENT</span>
+                <span class="info-value">
+                    Linux · AWS · Docker
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+    <div class="reveal-marker"></div>
+
+    <div class="section-label">
+        SKILLS
+    </div>
+
+    <h2 class="section-title">
+        Technologies I work with.
+    </h2>
+
+    <div class="skills">
+
+        <div class="skill">
+            <h3>Python</h3>
+            <p>Programming & automation</p>
+        </div>
+
+        <div class="skill">
+            <h3>AWS</h3>
+            <p>Cloud infrastructure</p>
+        </div>
+
+        <div class="skill">
+            <h3>Linux</h3>
+            <p>Servers & administration</p>
+        </div>
+
+        <div class="skill">
+            <h3>Docker</h3>
+            <p>Containerization</p>
+        </div>
+
+        <div class="skill">
+            <h3>Kubernetes</h3>
+            <p>Container orchestration</p>
+        </div>
+
+        <div class="skill">
+            <h3>Git</h3>
+            <p>Version control</p>
+        </div>
+
+        <div class="skill">
+            <h3>MySQL</h3>
+            <p>Database systems</p>
+        </div>
+
+        <div class="skill">
+            <h3>DevOps</h3>
+            <p>Cloud & deployment workflows</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+    <div class="reveal-marker"></div>
+
+    <div class="section-label">
+        PROJECTS
+    </div>
+
+    <h2 class="section-title">
+        Things I've built.
+    </h2>
+
+    <div class="projects">
+
+        <!-- Project 1 -->
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 01
+            </div>
+
+            <h3>Braille Recognition API</h3>
+
+            <p>
+                A deep-learning based system that processes Braille images,
+                recognizes characters and converts the result into speech.
+            </p>
+
+            <div class="technologies">
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>TensorFlow</span>
+                <span>Gemini</span>
+            </div>
+
+        </div>
+
+
+        <!-- Project 2 -->
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 02
+            </div>
+
+            <h3>AWS Infrastructure</h3>
+
+            <p>
+                Hands-on cloud infrastructure involving EC2, VPCs,
+                subnets, security groups, IAM and NAT gateways.
+            </p>
+
+            <div class="technologies">
+                <span>AWS</span>
+                <span>EC2</span>
+                <span>VPC</span>
+                <span>IAM</span>
+            </div>
+
+        </div>
+
+
+        <!-- Project 3 -->
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 03
+            </div>
+
+            <h3>Nginx Web Server</h3>
+
+            <p>
+                A Linux-based web hosting environment using Nginx and
+                custom server configuration deployed on AWS EC2.
+            </p>
+
+            <div class="technologies">
+                <span>Linux</span>
+                <span>Nginx</span>
+                <span>AWS</span>
+                <span>HTML</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+    <div class="reveal-marker"></div>
+
+    <div class="section-label">
+        CONTACT
+    </div>
+
+    <h2 class="section-title">
+        Let's connect.
+    </h2>
+
+    <div class="contact-box">
+
+        <p>
+            If you would like to discuss a project, opportunity or
+            technology, you can reach me through the links below.
+        </p>
+
+        <div class="contact-links">
+
+            <a href="mailto:infantj0712@gmail.in">Email</a>
+
+            <a href="https://github.com/inf0712" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+            <a href="https://www.linkedin.com/in/infant-joseph/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BACK TO TOP ================= -->
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+    ↑
+</button>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+    © 2026 Infant Joseph. Built with HTML & CSS.
+</footer>
+
+
+<script>
+    /* ================= NAVIGATION ================= */
+
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.getElementById("navMenu");
+    const navLinks = document.querySelectorAll("nav a");
+
+    navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+
+        const isOpen = navMenu.classList.contains("open");
+        navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+        navToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    // Close mobile navigation after selecting a section.
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            navMenu.classList.remove("open");
+            navToggle.textContent = "☰";
+            navToggle.setAttribute("aria-label", "Open navigation");
+        });
+    });
+
+
+    /* ================= ACTIVE NAVIGATION ================= */
+
+    const sections = document.querySelectorAll("section[id]");
+
+    const sectionObserver = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => link.classList.remove("active"));
+
+                    const activeLink = document.querySelector(
+                        `nav a[href="#${entry.target.id}"]`
+                    );
+
+                    if (activeLink) {
+                        activeLink.classList.add("active");
+                    }
+                }
+            });
+        },
+        {
+            threshold: 0.35
+        }
+    );
+
+    sections.forEach(section => sectionObserver.observe(section));
+
+
+    /* ================= SCROLL REVEAL ================= */
+
+    const revealElements = document.querySelectorAll(
+        ".section-label, .section-title, .about-grid, .skill, .project, .contact-box"
+    );
+
+    revealElements.forEach(element => {
+        element.classList.add("reveal");
+    });
+
+    const revealObserver = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+    revealElements.forEach(element => revealObserver.observe(element));
+
+
+    /* ================= TYPING EFFECT ================= */
+
+    const subtitle = document.querySelector(".hero-subtitle");
+
+    const roles = [
+        "DevOps Student · Cloud · Linux",
+        "AWS · Docker · Kubernetes",
+        "Linux · Automation · Git",
+        "Cloud Infrastructure · DevOps"
+    ];
+
+    let roleIndex = 0;
+    let characterIndex = 0;
+    let deleting = false;
+
+    function typeRole() {
+        const currentRole = roles[roleIndex];
+
+        if (!deleting) {
+            subtitle.textContent = currentRole.substring(0, characterIndex + 1);
+            characterIndex++;
+
+            if (characterIndex === currentRole.length) {
+                deleting = true;
+                setTimeout(typeRole, 1800);
+                return;
+            }
+
+            setTimeout(typeRole, 70);
+        } else {
+            subtitle.textContent = currentRole.substring(0, characterIndex - 1);
+            characterIndex--;
+
+            if (characterIndex === 0) {
+                deleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+            }
+
+            setTimeout(typeRole, 40);
+        }
+    }
+
+    subtitle.classList.add("typing-cursor");
+    typeRole();
+
+
+    /* ================= BACK TO TOP ================= */
+
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+            backToTop.classList.add("show");
+        } else {
+            backToTop.classList.remove("show");
+        }
+    });
+
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+
+    /* ================= CARD INTERACTION ================= */
+
+    const cards = document.querySelectorAll(".skill, .project");
+
+    cards.forEach(card => {
+        card.addEventListener("mousemove", event => {
+            const rect = card.getBoundingClientRect();
+
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            const rotateX = ((y / rect.height) - 0.5) * -3;
+            const rotateY = ((x / rect.width) - 0.5) * 3;
+
+            card.style.transform =
+                `translateY(-3px) perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "";
+        });
+    });
+
+
+    /* ================= CURRENT YEAR ================= */
+
+    const footer = document.querySelector("footer");
+
+    footer.innerHTML =
+        `© ${new Date().getFullYear()} Infant Joseph. Built with HTML, CSS & JavaScript.`;
+</script>
+
+</body>
+</html>
+
+```
