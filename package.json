@@ -1,0 +1,32 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inf0712/My-Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inf0712/My-Portfolio/issues"
+  },
+  "homepage": "https://github.com/inf0712/My-Portfolio#readme",
+  "type": "module",
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.28.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.3.4",
+    "vite": "5.4.14"
+  }
+}
