@@ -5,7 +5,7 @@ export const profile = {
   email: 'infantj0712@gmail.com',
   linkedin: 'https://linkedin.com/in/infant-joseph',
   github: 'https://github.com/inf0712',
-  tagline: 'I BUILD. I BREAK. I UNDERSTAND.',
+  tagline: 'BUILD. AUTOMATE. UNDERSTAND.',
 };
 
 export const experience = [
